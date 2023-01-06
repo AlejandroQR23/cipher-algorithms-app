@@ -1,0 +1,59 @@
+@import 'variables';
+
+.instructions {
+  margin: 0 0 32px 0;
+  font-weight: 500;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 -10px;
+  padding: 0 64px;
+}
+
+.gallery__item {
+  max-width: calc(100% / 4 - 20px);
+  padding: 16px 32px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  background-color: $color-light;
+  box-shadow: 16px 11px 24px 0px rgba(98, 71, 170, 0.35);
+  margin-bottom: 32px;
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin: 16px 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__pill {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 15px;
+    background-color: $color-secondary;
+    color: $color-dark;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+}
+
+.selected {
+  background-color: $color-secondary;
+}
