@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { algorithmAPI, Algorithm } from '../api/algorithmAPI';
 
 import Loading from '../components/Loading/loading.component';
+
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/galery.scss';
+import { useNavigate } from 'react-router-dom';
 
 const INSTRUCTIONS = [
   'Select two algorithms of the same type to compare',
@@ -15,7 +19,20 @@ const Gallery = () => {
   const [selectedAlgorithms, setSelectedAlgorithms] = useState<Algorithm[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const navigate = useNavigate();
+
   let instructions = INSTRUCTIONS[selectedAlgorithms.length];
+
+  useEffect(() => {
+    if (selectedAlgorithms.length < 2) {
+      return;
+    }
+    if (selectedAlgorithms[0].type !== selectedAlgorithms[1].type) {
+      toast.error('You must select two algorithms of the same type');
+    } else {
+      navigate('/compare', { state: selectedAlgorithms });
+    }
+  }, [selectedAlgorithms]);
 
   useEffect(() => {
     (async () => {
@@ -50,6 +67,15 @@ const Gallery = () => {
 
   return (
     <div className="hero">
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        rtl={false}
+        pauseOnHover
+        theme="colored"
+      />
       {loading ? (
         <Loading />
       ) : (
