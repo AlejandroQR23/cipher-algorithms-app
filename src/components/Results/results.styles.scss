@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.results {
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+  margin: 32px 64px;
+  &__item {
+    background-color: $color-light;
+    box-shadow: 16px 11px 24px 0px rgba(98, 71, 170, 0.35);
+    border-radius: 5px;
+    padding: 32px 64px;
+  }
+}
