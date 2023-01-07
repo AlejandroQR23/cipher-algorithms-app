@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './screens/App';
+import Compare from './screens/Compare';
 import Gallery from './screens/Gallery';
 import './styles/index.scss';
 
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/gallery',
     element: <Gallery />,
+  },
+  {
+    path: '/compare',
+    element: <Compare />,
   },
 ]);
 
