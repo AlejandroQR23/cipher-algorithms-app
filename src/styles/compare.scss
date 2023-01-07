@@ -1,0 +1,33 @@
+@import 'variables';
+
+.compare {
+  &__instructions {
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-family: inherit;
+
+    &:focus {
+      outline: 2px solid $color-primary;
+    }
+  }
+
+  &__error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+}

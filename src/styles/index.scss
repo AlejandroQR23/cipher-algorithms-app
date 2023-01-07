@@ -7,8 +7,34 @@ body {
   margin: 0;
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  &__title {
+    font-family: $font-title;
+    letter-spacing: 0.25rem;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    max-width: 720px;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__image {
+    margin-top: 4rem;
+  }
 }
