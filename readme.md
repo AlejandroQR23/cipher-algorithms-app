@@ -10,3 +10,7 @@ To run this app, you need to have [Node.js](https://nodejs.org/en/) installed on
 yarn install
 yarn run dev
 ```
+
+The app requires to have the backend running. You can find the backend code [here](https://github.com/AlejandroQR23/cipher-algorithms)
+
+Follow the instructions on the backend repository to run the backend.
